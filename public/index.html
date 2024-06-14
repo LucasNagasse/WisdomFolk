@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>WisdomFolk - Home</title>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="title">
+        <img class="logo" src="/imgs/logo.png" alt="logo.png" />
+        <h1>WisdomFolk</h1>
+      </a>
+      <nav>
+        <li><a href="/">Home</a></li>
+        <li><a href="/explore">Explorar</a></li>
+      </nav>
+    </header>
+    <hr />
+    <div>
+      <main>
+        <h1>WisdomFolk</h1>
+        <section class="introduction">
+          <div>
+            <img class="illustration" src="https://institutopositivo.org.br/wp-content/uploads/2020/02/icone_livro_3.png" />
+            <p>WisdomFolk é um ambiente de estudos, seja para publicar algum material educativo ou tirar alguma dúvida sobre determinado tema. Discussões, tutoriais, fóruns de dúvidas e exemplos de qualquer assunto podem ser visualizados e aprimorados com o tempo, expandindo o conhecimento de todos de uma forma personalizada, geral ou específica para cada um.</p>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <div>
+            <h1>O que é educação?</h1>
+          </div>
+          <div>
+            <p>Educação é uma prática social que visa ao desenvolvimento do ser humano, de suas potencialidades, habilidades e competências. A educação, portanto, não se restringe à escola. A educação é um direito de todos e visa ao pleno desenvolvimento humano por meio do processo de ensino-aprendizagem.</p>
+            <img class="illustration" src="https://img.freepik.com/free-vector/online-school-platform-abstract-concept-vector-illustration-homeschooling-covid2019-qarantine-online-education-platform-digital-classes-virtual-courses-lms-school-abstract-metaphor_335657-5850.jpg?t=st=1718378453~exp=1718382053~hmac=e17f9ca91276051b8a99e18853d696a174f1a2daf13eb9e5c144f4ed3c8fd75b&w=740" />
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div>
+        <h3>Contato:</h3>
+        <address>
+          <p>
+            Email:
+            <a href="mailto:lucas.nagasse@sptech.school">lucas.nagasse@sptech.school</a>
+          </p>
+          <p>
+            Github:
+            <a href="https://github.com/LucasNagasse">https://github.com/LucasNagasse</a>
+          </p>
+        </address>
+      </div>
+    </footer>
+    <script src="/js/utils.js"></script>
+    <script>
+      const header = document.querySelector("body > header > nav");
+      populateHeader(header);
+      header.querySelector(`li:has(a[href="${window.location.pathname}"])`).classList.add("current-nav");
+    </script>
+  </body>
+</html>

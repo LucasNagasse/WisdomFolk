@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>WisdomFolk - Home</title>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="title">
+        <img class="logo" src="/imgs/logo.png" alt="logo.png" />
+        <h1>WisdomFolk</h1>
+      </a>
+      <nav>
+        <li><a href="/">Home</a></li>
+        <li><a href="/explore">Explorar</a></li>
+      </nav>
+    </header>
+    <hr />
+    <div>
+      <main>
+        <h1>Grupo 1</h1>
+        <section class="post">
+          <h1>Autor</h1>
+          <div class="content">Conteúdo</div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div>
+        <h3>Contato:</h3>
+        <address>
+          <p>
+            Email:
+            <a href="mailto:lucas.nagasse@sptech.school">lucas.nagasse@sptech.school</a>
+          </p>
+          <p>
+            Github:
+            <a href="https://github.com/LucasNagasse">https://github.com/LucasNagasse</a>
+          </p>
+        </address>
+      </div>
+    </footer>
+    <script src="/js/utils.js"></script>
+    <script>
+      const header = document.querySelector("body > header > nav");
+      populateHeader(header);
+      header.querySelector(`li:has(a[href="${window.location.pathname}"])`).classList.add("current-nav");
+
+      let folkId = window.location.pathname;
+      folkId = folkId.substring(folkId.indexOf("/", 1) + 1);
+    </script>
+  </body>
+</html>

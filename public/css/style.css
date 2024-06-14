@@ -1,0 +1,333 @@
+:root {
+  --bgColor: #020208ff; /* #0b1e26; */
+  --textColor: #fffff0ff;
+  --linkColor: #90e0efff;
+  --linkHoverColor: #00abceff;
+  --warningColor: #ff2020ff;
+  --formColor: #212139;
+  --buttonColor: #3baf37;
+  --emphasisColor: #21705b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  outline-offset: 1px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  /* background: url("https://giffiles.alphacoders.com/215/215837.gif") no-repeat; */
+  background-size: 100% 100%;
+  background-color: var(--bgColor);
+  color: var(--textColor);
+
+  & *:not(script) {
+    display: flex;
+  }
+  & ul {
+    list-style-type: none;
+  }
+  & li {
+    display: list-item;
+  }
+  & a {
+    text-decoration: none;
+    color: var(--linkColor);
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--linkHoverColor);
+    }
+  }
+  & button {
+    cursor: pointer;
+    border: none;
+    padding: 0.5em;
+    background-color: transparent;
+  }
+  & input {
+    transition: transform 0.2s;
+    border: none;
+    padding: 0.4em;
+    border-radius: 2px;
+    background-color: var(--formColor);
+    color: var(--textColor);
+
+    &::placeholder {
+      color: var(--textColor);
+    }
+    &:hover {
+      transform: scale(102%, 102%);
+    }
+  }
+  & :is(a, input, button):focus-visible {
+    outline: var(--textColor) solid 1px;
+  }
+  & span.warning {
+    border-radius: 2px;
+    padding: 0.5em;
+    color: var(--warningColor);
+    font-weight: bold;
+  }
+  & img.loading {
+    height: 3rem;
+  }
+  & form {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    font-size: 1.3em;
+
+    & > .inputs {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+      width: 100%;
+
+      & > label {
+        flex-direction: column;
+        gap: 0.1em;
+        width: 50%;
+      }
+      & input:invalid:not(:placeholder-shown, :focus) {
+        outline: 1px solid var(--warningColor);
+      }
+      & > input {
+        width: 50%;
+      }
+    }
+    & > menu {
+      justify-content: space-evenly;
+      width: 100%;
+
+      &:has(:only-child) {
+        justify-content: center;
+      }
+    }
+    & > button[type="submit"] {
+      transition: transform 0.2s, border-color 0.2s;
+      border-radius: 2px;
+      border: 1px solid var(--formColor);
+      background-color: var(--bgColor);
+      font-size: 0.8em;
+      color: var(--textColor);
+
+      &:hover {
+        transform: scale(110%, 110%);
+      }
+    }
+  }
+  dialog {
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    border-radius: 2px;
+    border: 1px solid var(--textColor);
+    padding: 1em;
+    background-color: var(--bgColor);
+    transform: translate(-50%, -50%);
+    color: var(--textColor);
+
+    & > form {
+      & .inputs {
+        & > input {
+          width: 75%;
+        }
+      }
+    }
+    & > button.exit {
+      align-self: flex-end;
+      color: var(--textColor);
+    }
+  }
+
+  & > hr {
+    width: 95%;
+    border-color: var(--bgColor);
+  }
+  & > header {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1%;
+    width: 100%;
+    color: var(--textColor);
+
+    & > .title {
+      transition: transform 0.2s;
+      align-items: center;
+      height: 5rem;
+      text-decoration: none;
+      color: var(--textColor);
+
+      & > .logo {
+        height: 100%;
+      }
+      & > h1 {
+        font-size: 2.5em;
+      }
+
+      &:hover {
+        transform: scale(105%, 105%);
+      }
+    }
+    & > nav {
+      align-items: baseline;
+      gap: 1em;
+
+      & > li {
+        display: flex;
+
+        & > .button-create-folk {
+          border-radius: 2px;
+          padding: 0.3em;
+          border: 1px solid var(--emphasisColor);
+        }
+        & > :is(button, a) {
+          transition: transform 0.2s, color 0.2s;
+          font-size: 1.5rem;
+
+          &:hover {
+            transform: scale(110%, 110%);
+          }
+        }
+        & > button {
+          padding: 0;
+          color: var(--linkColor);
+
+          &.logout:hover {
+            color: var(--warningColor);
+          }
+        }
+        & > a {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        &.current-nav > :is(button, a) {
+          font-size: 2rem;
+          color: var(--linkHoverColor);
+        }
+      }
+    }
+  }
+  & > div {
+    & > .sidebar {
+      padding: 1%;
+      background-color: #6d6a75;
+
+      & > nav {
+        flex-direction: column;
+        gap: 0.5em;
+      }
+    }
+  }
+  & > :is(div, main) {
+    flex-grow: 1;
+    width: 100%;
+  }
+  :is(&, & > div) > main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 1em;
+    padding: 1%;
+
+    & > a:has(.logo) > .logo {
+      transition: transform 0.2s;
+      height: 8em;
+
+      &:hover {
+        transform: scale(110%, 110%);
+      }
+    }
+    & > h1 {
+      margin-top: 2%;
+      font-size: 3em;
+    }
+    & > section {
+      flex-direction: column;
+      align-items: center;
+      gap: 5em;
+      padding: 2%;
+      width: 100%;
+
+      & p {
+        font-size: 1.8rem;
+      }
+      & > div:has(h1) {
+        justify-content: center;
+        border-radius: 15% 0 15% 0;
+        padding: 1%;
+        width: 40%;
+        background-color: #fdfdff;
+
+        & h1 {
+          font-size: 2em;
+          color: var(--bgColor);
+        }
+      }
+      & > div:not(:has(h1)) {
+        align-items: center;
+        gap: 5em;
+        padding: 0 5%;
+
+        & > img.illustration {
+          height: 25rem;
+        }
+      }
+      &.introduction img.illustration {
+        height: 15rem;
+      }
+
+      &.post {
+        gap: 2em;
+        border: 1px solid var(--formColor);
+        width: 40%;
+      }
+
+      & > section#sectionCharts {
+        justify-content: space-evenly;
+        width: 100%;
+
+        & > div.chart {
+          width: 30%;
+        }
+      }
+    }
+    & > form {
+      width: 40%;
+    }
+  }
+  & > footer {
+    justify-content: center;
+    padding: 2%;
+    width: 100%;
+    color: var(--textColor);
+
+    & > div {
+      flex-direction: column;
+      align-items: center;
+
+      & > h3 {
+        margin-bottom: 5%;
+      }
+      & > address {
+        flex-direction: column;
+        align-items: center;
+
+        & > div {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

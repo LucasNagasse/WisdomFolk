@@ -1,2 +1,2 @@
 # WisdomFolk
-Uma aplicação para upload de material de estudo e dúvidas
+Uma aplicação para uploads de dúvidas e links de material de estudo
